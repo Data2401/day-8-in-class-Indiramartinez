@@ -11,7 +11,8 @@ output:nhtml_document
 Make a list that contains the information on a single playing card. Suit, face, and value. 
 
 ```{r}
-
+spades_card <- list(suit= "spade", face= "knight", value = 2)
+spades_card
 
 ```
 
@@ -19,7 +20,12 @@ Make a list that contains the information on a single playing card. Suit, face, 
 Make a second list where each element contains all the options for suit, face, and value, respectively. 
 
 ```{r}
-
+card_options <- list(
+  suit= c(1:10, "heart", "diamond", "spade"),
+  face= c("jack","king", "queen"),
+  value = c(1:10, 10, 10, 10)
+)
+card_options
 
 ```
 
@@ -28,22 +34,25 @@ If `Newlist <- list(a=1:10, b="Good morning", c="Hi")`, write an R statement tha
 
 ```{r}
 Newlist <- list(a=1:10, b="Good morning", c="Hi")
-
-
+Newlist[[1]]+1
+Newlist
 ```
 
 If `b <- list(a=1:10, c="Hello", d="AA")`, write an R expression that will give all elements of the first vector of b, except the second, and write another that returns only elements of `a` that are greater than 7.
 
 ```{r}
-b <- list(a=1:10, c="Hello", d="AA")
-
-
+b <- list(a=1:10, c="Hello", d="AA") 
+elements_b <- b$a[-2] #-2 removes value 2
+greater_7 <- b$a[b$a > 7] #you need to make a sublist and set it in []
+greater_7
 ```
 
 Let `x <- list(a=5:10, c="Hello", d="AA")`, write an R statement to add a new item z = "NewItem" to the list x.
 
 ```{r}
 x <- list(a=5:10, c="Hello", d="AA")
+x$z = "NewItem"
+x
 
 
 ```
